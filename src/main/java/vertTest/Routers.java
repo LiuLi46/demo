@@ -13,7 +13,7 @@ public class Routers extends AbstractVerticle {
     
     Vertx vertx=Vertx.vertx();
     vertx.deployVerticle(Routers.class.getName());
-    System.out.print("you is dog")
+    System.out.print("you is dog");
   }
   public void start() {
     HttpServer server = vertx.createHttpServer();
