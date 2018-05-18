@@ -22,13 +22,12 @@ public class Routers extends AbstractVerticle {
     Route route1 = router.route("/some/path/").handler(routingContext -> {
 
       HttpServerResponse response = routingContext.response();
-      // 由于我们会在不同的处理器里写入响应，因此需要启用分块传输
-      // 仅当需要通过多个处理器输出响应时才需要
+   
       response.setChunked(true);
 
       response.write("route1\n");
 
-      // 5 秒后调用下一个处理器
+      // 5 绉掑悗璋冪敤涓嬩竴涓鐞嗗櫒
       routingContext.vertx().setTimer(5000, tid -> routingContext.next());
     });
 
@@ -37,7 +36,7 @@ public class Routers extends AbstractVerticle {
       HttpServerResponse response = routingContext.response();
       response.write("route2\n");
 
-      // 5 秒后调用下一个处理器
+      // 5 绉掑悗璋冪敤涓嬩竴涓鐞嗗櫒
       routingContext.vertx().setTimer(5000, tid ->  routingContext.next());
     });
 
@@ -46,7 +45,7 @@ public class Routers extends AbstractVerticle {
       HttpServerResponse response = routingContext.response();
       response.write("route3");
 
-      // 结束响应
+      // 缁撴潫鍝嶅簲
       routingContext.response().end();
     });
   }
