@@ -2,6 +2,8 @@ package json;
 
 
 
+import java.util.ArrayList;
+
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
@@ -19,7 +21,7 @@ public class Demo {
     JsonObject Json1=new JsonObject(); 
     JsonArray books=new JsonArray();  
     Json1.put("book1","java¿ª·¢").put("BOOK2", "ANDROID");
-    System.out.println(Json1);
+    System.out.println(Json1.containsKey("book1"));
    // System.out.println(Json1.getLong("book1"));
     books.add(Json1);
     System.out.println(books);
@@ -30,9 +32,9 @@ public class Demo {
     Json.put("books",books);
     System.out.println(Json.encodePrettily().toString());
     
- /*   ArrayList<String> list=new ArrayList<String>();
+    ArrayList<String> list=new ArrayList<String>();
     
     list.add("java");
-    list.add("android");*/
+    list.add("android");
 }
 }
